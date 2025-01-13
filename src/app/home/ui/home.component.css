@@ -1,0 +1,79 @@
+.wrapper {
+  --height: 100%;
+}
+.banner {
+  --height: calc(100vh - 104px);
+  height: var(--height);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url("public/assets/home/delorean.webp");
+    background-size: 150% 100%;
+    background-position: center;
+    z-index: -1;
+    mask-image: url("public/assets/home/generated-black.gif");
+    mask-size: cover;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+}
+.content {
+  height: var(--height);
+}
+.content-cards {
+  padding-block: 4rem;
+}
+#cards {
+  --numcards: 4;
+  view-timeline-name: --cards-element-scrolls-in-body;
+  padding: 0;
+
+  & li {
+    list-style: none;
+  }
+}
+
+.card {
+  --index0: calc(var(--index) - 1);
+  --reverse-index: calc(var(--numcards) - var(--index0));
+  --reverse-index0: calc(var(--reverse-index) - 1);
+}
+
+.card {
+  position: sticky;
+  top: 0;
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+.card_content {
+  --start-range: calc(var(--index0) / var(--numcards) * 100%);
+  --end-range: calc(var(--index) / var(--numcards) * 100%);
+  animation: linear scale forwards;
+  animation-timeline: --cards-element-scrolls-in-body;
+  animation-range: exit-crossing var(--start-range) exit-crossing var(--end-range);
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+  background: var(--color-black);
+  color: rgb(10, 5, 7);
+  border-radius: 1em;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "text img";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: stretch;
+  outline: var(--outline-width) solid blue;
+  padding: 1em;
+  font-family: Arial, sans-serif;
+  box-shadow: 1px 1px 1px 2px #ffffff08;
+}
+
+@keyframes scale {
+  to {
+    transform: scale(calc(1.1 - calc(0.1 * var(--reverse-index))));
+  }
+}

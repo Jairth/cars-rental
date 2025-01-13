@@ -2,6 +2,14 @@
   --boxed-size: 90rem;
   --boxed: max(calc((100vw - var(--boxed-size)) / 2), 1.25rem);
   padding-inline: var(--boxed) !important;
+  height: var(--height, auto);
+}
+
+.content {
+  display: flex;
+  align-items: var(--align-it, center);
+  justify-content: var(--justify-ctn, center);
+  flex-direction: var(--direction, column);
 }
 
 .flow > * + * {
@@ -54,4 +62,15 @@
   &:hover{
     --color: #000;
   }
+}
+
+.title-banner {
+  font-size: var(--fs-title-banner);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.paragraph {
+  font-size: var(--fs-paragraph);
+  font-weight: 500;
 }
