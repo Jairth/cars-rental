@@ -6,12 +6,8 @@ export const routes: Routes = [
 		loadChildren: () => import("./session/session.routes"),
 	},
 	{
-		path: "home",
-		loadComponent: () => import("./home/ui/home.component"),
-	},
-	{
-		path: "list-offers",
-		loadComponent: () => import("./list-cars/ui/list-cars-page.component"),
+		path: "",
+		loadChildren: () => import("./UI/layout.routes"),
 	},
 	{
 		path: "**",

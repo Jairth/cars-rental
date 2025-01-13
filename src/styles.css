@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/fonts.css';
+@import "./styles/_reset.css";
+@import './styles/_variables.css';
+@import "./styles/_utilities.css";
+
+body {
+  background-color: var(--color-black);
+  font-family: 'Onest', sans-serif;
+  margin: 0;
+}
