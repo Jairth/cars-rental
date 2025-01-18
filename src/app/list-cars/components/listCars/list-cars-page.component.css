@@ -1,0 +1,72 @@
+.list-cars {
+  padding-block: 0 3rem;
+}
+.card-car {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  background: url('https://img.sixt.com/1600/6f09b0e8-6820-4ac0-bedd-5797e9814c18.jpg') no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.card-car-header {
+  & h3 {
+    margin: 0;
+  }
+
+  &.flow {
+    --flow-space: 0.5rem
+  }
+  &.content {
+    --align-it: flex-start;
+  }
+}
+
+.metas, .ocupantes, .car-tipo {
+  display: flex;
+  align-items: center;
+}
+
+.metas {
+  gap: 1rem;
+}
+
+.ocupantes, .car-tipo {
+  gap: 0.3rem;
+  padding-inline: 0.75rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.12);
+
+  & svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.card-car-footer {
+
+  &.content {
+    --align-it: flex-start;
+  }
+}
+
+/* @view-transition {
+  navigation: auto;
+} */
+
+.card-image {
+  width: 17.25rem;
+}
+
+/* .start {
+  view-transition-name: start;
+  background: indigo;
+}
+.end {
+  view-transition-name: end;
+  background: deeppink;
+} */

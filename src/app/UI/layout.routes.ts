@@ -10,8 +10,8 @@ export default [
 				loadComponent: () => import("../home/ui/home.component"),
 			},
 			{
-				path: "list-offers",
-				loadComponent: () => import("../list-cars/ui/list-cars-page.component"),
+				path: "",
+				loadChildren: () => import("../list-cars/list-cars.routes"),
 			},
 			{
 				path: "checkout-offers",

@@ -1,1 +1,60 @@
-<p>checkout-page works!</p>
+<div class="container">
+  <form class="formulario">
+    <h2>¿Quién Conducirá?</h2>
+    <h3>En caso de requerir Factura</h3>
+    <label for="empresa">Razón Social</label>
+    <input type="text" id="empresa" name="empresa" placeholder="Ingrese Nombre de la empresa según Sunat">
+
+    <label for="ruc">RUC</label>
+    <input class="ruc" type="number" min="10000000000" max="20999999999" step="1" id="ruc" name="ruc"
+      placeholder="Ingrese RUC de la empresa">
+
+    <h3>Datos obligatorios</h3>
+
+    <label for="nombre">Nombres</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombres">
+
+    <label for="apellido">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+
+    <label for="correo">Correo Electrónico</label>
+    <input type="email" id="correo" name="correo" placeholder="Correo Electrónico">
+
+    <label for="direccion">Dirección de Entrega</label>
+    <input type="text" id="direccion" name="direccion"
+      placeholder="Ingrese dirección donde se hará entrega del vehiculo">
+
+    <label for="celular">Celular (WhatsApp)</label>
+    <input type="tel" id="celular" name="celular" placeholder="Número de celular">
+
+    <div class="edad">
+      <input type="checkbox" class="edad-check" id="edad-check" name="edad-check">
+      <label for="edad-check">Tengo 18 años o más</label>
+    </div>
+
+  </form>
+
+  <div class="tarjeta">
+    <h2>Resúmen de su reserva:</h2>
+    <div class="modelo-vehiculo">
+      <figure>
+        <img
+          src="https://www.sixt.com/fileadmin2/files/global/sideview/user_upload/fleet/png/350x200/toyota-agya-5d-white-2024.png"
+          alt="Image description" width="92" height="72">
+      </figure>
+      <div>
+        <p><strong>Toyota Agya 1.0</strong></p>
+        <p>alquiler ppor 12 días</p>
+      </div>
+    </div>
+    <p><strong>Entrega:</strong> Lima Miraflores<br>Dom, 02 feb 2025 | 12:30 PM</p>
+    <p><strong>Retorno:</strong> Lima Miraflores<br>Mar, 04 feb 2025 | 12:30 PM</p>
+    <ul>
+      <li>Seguro de terceros</li>
+      <li>Libre de responsabilidad por daños y pérdidas hasta $2000.00</li>
+      <li>Kilometraje ilimitado</li>
+      <li>Opción de reserva: Sea flexible: pague al momento de la recogida, cancelación gratuita y nueva reserva en
+        cualquier momento antes de la hora de recogida</li>
+    </ul>
+  </div>
+</div>

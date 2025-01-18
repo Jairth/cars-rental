@@ -7,6 +7,31 @@
   </div>
 </section>
 
+<section class="clients">
+  <div class="wrapper flow">
+    <div class="texts">
+      <h2 class="title">Nuestro catálogo</h2>
+      <p class="paragraph">Ut sapien eros, tincidunt enim amet id sociis aliqua velit auctor mauris quamol donec id ac
+        sed ultricies
+        aliquam aliquet quis imperdiet in enim mi at nibh</p>
+    </div>
+    <div class="grid-cards">
+      @for (client of listClients; track $index) {
+      <a class="clients-card">
+        <h3>{{ client.name }}</h3>
+        <div class="logo-and-bg-video">
+          <video autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
+            <source [src]="client.source_mp4">
+            <source [src]="client.source_webp">
+          </video>
+        </div>
+        <div class="clients-overlay"></div>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
 <section class="content-cards">
   <div class="wrapper">
     <ul id="cards">

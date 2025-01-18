@@ -1,0 +1,104 @@
+section {
+  margin-block: 10rem;
+}
+
+.card-car {
+  display: flex;
+  gap: 1rem;
+
+  & svg {
+    width: 1.65rem;
+    height: 1.65rem;
+  }
+}
+
+.card-left, .card-right {
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+.card-left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+
+  background: url('https://img.sixt.com/1600/6f09b0e8-6820-4ac0-bedd-5797e9814c18.jpg') no-repeat;
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+.card-car-header {
+  & h3 {
+    margin: 0;
+  }
+
+  & span {
+    font-size: 1rem;
+  }
+
+  &.flow {
+    --flow-space: 0.5rem
+  }
+  &.content {
+    --align-it: flex-start;
+  }
+}
+
+.metas, .ocupantes, .car-tipo {
+  display: flex;
+  align-items: center;
+}
+
+.metas {
+  gap: 1rem;
+}
+
+.ocupantes, .car-tipo {
+  gap: 0.3rem;
+  padding-inline: 0.75rem;
+  border-radius: 1rem;
+}
+
+.metas-bottom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-right {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.info {
+
+  & .referencia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 1rem;
+    padding: 12px 1rem;
+  }
+
+  & h5{
+    font-size: 1.2rem;
+    margin-block-end: 0.8rem;
+  }
+  & h6{
+    font-size: 1rem;
+    margin-block-end: 0.5rem;
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+.price-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

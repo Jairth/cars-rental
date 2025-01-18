@@ -23,7 +23,7 @@
 
 .header__nav {
   position: absolute;
-  top: 0;
+  top: -4px;
   right: 0;
   background-color: var(--color-primary);
   height: 100%;
@@ -33,7 +33,8 @@
   display: grid;
   grid-template-columns: minmax(0,1fr) clamp(17.5rem, 6.5957rem + 34.8936vi, 38rem);
 
-  clip-path: circle(0.3% at 100% 0);
+  /* clip-path: circle(0.3% at 100% 0); */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   transition: clip-path 600ms ease;
 }
 
@@ -92,7 +93,7 @@
   }
 
   .header__nav{
-    clip-path: circle(141.2% at 100% 0);
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     z-index: 4;
   }
   .active {

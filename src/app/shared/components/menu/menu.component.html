@@ -6,13 +6,13 @@
 <nav class="header__nav">
   <ul class="header__ul" role='list'>
     <li class="">
-      <a href="#" class="header__a">Home</a>
+      <a routerLink="/home" class="header__a" (click)="isOpen()">Home</a>
     </li>
     <li class="">
-      <a href="#" class="header__a">Autos</a>
+      <a routerLink="/list-offers" class="header__a" (click)="isOpen()">Autos</a>
     </li>
     <li class="">
-      <a href="#" class="header__a">Contáctanos</a>
+      <a routerLink="/contact" class="header__a" (click)="isOpen()">Contáctanos</a>
     </li>
   </ul>
   <div class="header__socials">

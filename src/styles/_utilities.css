@@ -16,7 +16,7 @@
   margin-block-start: var(--flow-space, 1rem);
 }
 
-.boton{
+.btn{
   --color-white: #fbfbfb;
   --color-orange: #ff7020;
   --color: #000;
@@ -54,7 +54,7 @@
   }
 }
 
-.boton[outline] {
+.btn[outline] {
   --color-white: transparent;
   --color-orange: #fbfbfb;
   --color: #fbfbfb;
@@ -70,7 +70,19 @@
   line-height: 1.5;
 }
 
+.title {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .paragraph {
   font-size: var(--fs-paragraph);
   font-weight: 500;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem,100%), 1fr));
+  gap: 1.75rem;
 }
