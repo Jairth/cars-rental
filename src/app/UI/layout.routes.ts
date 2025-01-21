@@ -10,7 +10,7 @@ export default [
 				loadComponent: () => import("../home/ui/home.component"),
 			},
 			{
-				path: "",
+				path: "list-offers",
 				loadChildren: () => import("../list-cars/list-cars.routes"),
 			},
 			{
@@ -28,7 +28,7 @@ export default [
 			},
 			{
 				path: "**",
-				redirectTo: "/home",
+				redirectTo: "home",
 			},
 		],
 	},

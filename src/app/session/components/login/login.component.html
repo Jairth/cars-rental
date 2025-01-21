@@ -1,22 +1,22 @@
-<div class="container-1">
+<div class="container-form">
 
-  <h1>Inicia Sesión</h1>
+  <h1>Iniciar Sesión</h1>
 
-  <form action="#" method="POST" class="signin">
+  <form class="flow">
 
-    <div class="signin-dato">
-      <label for="usuario">Usuario</label>
-      <input type="email" id="usuario" name="usuario" placeholder="Ingrese su correo electrónico" required>
+    <div class="row">
+      <label for="usuario">Correo</label>
+      <input class="input-custom" type="email" id="usuario" name="usuario" placeholder="Ingrese su correo electrónico"
+        required>
     </div>
 
-    <div class="signin-dato">
+    <div class="row">
       <label for="contraseña">Contraseña</label>
-      <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+      <input class="input-custom" type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña"
+        required>
     </div>
 
-    <button class="boton-1">
-      <span class="texto-boton">Iniciar sesión →</span>
-    </button>
+    <button class="btn">Iniciar sesión</button>
 
     <p>¿No tienes una cuenta? <a routerLink="/session/register" class="link">Registrate</a></p>
 

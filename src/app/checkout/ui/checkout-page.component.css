@@ -1,23 +1,21 @@
 .container {
-  background-color: #ff7020;
   display: flex;
   gap: 30px;
   justify-content: space-between;
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+
+  & .flow {
+    --flow-space: 2rem;
+  }
 }
 
 .formulario, .tarjeta {
-  background-color: #fbfbfb;
-  padding: 20px;
-  border-radius: 8px;
-  width: 50%;
-  overflow: hidden;
-  box-sizing: border-box;
+  flex: 1;
 }
 
-label {
+/* label {
   display: block;
   margin-top: 15px;
   font-weight: bold;
@@ -29,7 +27,7 @@ input {
   margin-top: 5px;
   border: 1px solid #000;
   border-radius: 10px;
-}
+} */
 
 .edad {
   display:flex;
@@ -42,7 +40,7 @@ input {
 }
 
 .edad-check:checked {
-  accent-color: #ff7020;
+  accent-color: var(--color-primary);
 }
 
 .modelo-vehiculo{
@@ -68,14 +66,8 @@ input {
   margin: 5px 0;
 }
 
-.ruc {
-  -moz-appearance: textfield; /* Firefox */
-  -webkit-appearance: none; /* Safari y Chrome */
-  appearance: textfield; /* Soporte estándar */
-}
-
-.ruc::-webkit-inner-spin-button,
-.ruc::-webkit-outer-spin-button {
-  -webkit-appearance: none; /* Safari y Chrome */
-  margin: 0; /* Evita problemas de alineación */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

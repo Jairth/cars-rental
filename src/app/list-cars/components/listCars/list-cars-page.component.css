@@ -54,19 +54,11 @@
   }
 }
 
-/* @view-transition {
-  navigation: auto;
-} */
 
 .card-image {
   width: 17.25rem;
 }
 
-/* .start {
-  view-transition-name: start;
-  background: indigo;
+.container-skeleton {
+  display: flex;
 }
-.end {
-  view-transition-name: end;
-  background: deeppink;
-} */

@@ -1,6 +1,7 @@
 import {
 	ChangeDetectorRef,
 	Component,
+	DestroyRef,
 	inject,
 	signal,
 	viewChild,
@@ -11,19 +12,22 @@ import { AsyncPipe } from "@angular/common";
 import type { Vehiculo } from "../../interface/cars.interface";
 import { Router, RouterLink } from "@angular/router";
 import PopupCarComponent from "../popup-car/popup-car.component";
+import { SkeletonListCarComponent } from "@shared/components/skeleton-list-car/skeleton-list-car.component";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
 	selector: "app-list-cars-page",
-	imports: [AsyncPipe],
+	imports: [AsyncPipe, SkeletonListCarComponent],
 	templateUrl: "./list-cars-page.component.html",
 	styleUrl: "./list-cars-page.component.css",
 })
 export default class ListCarsPageComponent {
 	private carsService = inject(CarsService);
 	private router = inject(Router);
+	private destroy = inject(DestroyRef);
 	private cdr = inject(ChangeDetectorRef);
 
-	public listCars = this.carsService.getAllCars();
+	public listCars: Vehiculo[] = [];
 	public popup = viewChild(PopupCarComponent);
 	// public car = signal<Vehiculo>(null)
 	public itemCar = signal<Vehiculo>({
@@ -44,8 +48,29 @@ export default class ListCarsPageComponent {
 		ocupantes: "",
 	});
 
+	ngOnInit() {
+		this.getCars();
+	}
+
+	getCars() {
+		this.carsService
+			.getAllCars()
+			.pipe(takeUntilDestroyed(this.destroy))
+			.subscribe({
+				next: (response) => {
+					console.log(response);
+					if (response) {
+						this.listCars = response;
+					}
+				},
+				error: (err: Error) => {
+					console.log(err);
+				},
+			});
+	}
+
 	onPopupCar(car: Vehiculo) {
-		this.router.navigate(["/list-offers/popup/", car.id], {
+		this.router.navigate(["/list-offers/car/", car.id], {
 			state: { car: car },
 		});
 

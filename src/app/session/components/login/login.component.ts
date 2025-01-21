@@ -6,5 +6,8 @@ import { RouterLink } from "@angular/router";
 	imports: [RouterLink],
 	templateUrl: "./login.component.html",
 	styleUrl: "./login.component.css",
+	host: {
+		class: "wrapper",
+	},
 })
 export default class LoginComponent {}

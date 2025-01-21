@@ -2,7 +2,7 @@ import type { Routes } from "@angular/router";
 
 export default [
 	{
-		path: "list-offers",
+		path: "",
 		loadComponent: () => import("./ui/layout/layout.component"),
 		children: [
 			{
@@ -11,7 +11,7 @@ export default [
 					import("./components/listCars/list-cars-page.component"),
 			},
 			{
-				path: "popup/:car",
+				path: "car/:car",
 				loadComponent: () =>
 					import("./components/popup-car/popup-car.component"),
 			},

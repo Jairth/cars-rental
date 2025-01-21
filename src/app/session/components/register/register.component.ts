@@ -6,5 +6,8 @@ import { RouterLink } from "@angular/router";
 	imports: [RouterLink],
 	templateUrl: "./register.component.html",
 	styleUrl: "./register.component.css",
+	host: {
+		class: "wrapper",
+	},
 })
 export default class RegisterComponent {}

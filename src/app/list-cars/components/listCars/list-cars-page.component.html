@@ -1,55 +1,71 @@
-<section class="list-cars">
+
+  <section class="list-cars">
   <div class="wrapper flow">
     <h2 class="title">¿Tienes algún auto en mente?</h2>
-    <div class="grid-cards">
-      @if(listCars | async; as cars) {
-      @for (car of cars; track car.id) {
-      <section (click)="onPopupCar(car)" class="card-car">
-        <header class="card-car-header content flow">
-          <h3>{{ car.marca }} {{ car.modelo }}</h3>
-          <div class="metas">
-            <div class="ocupantes">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
-                </path>
-              </svg>
-              {{ car.ocupantes }}
+    @defer (when listCars) {
+      <div class="grid-cards">
+        <!-- @if(listCars | async; as cars) { -->
+        @for (car of listCars; track car.id) {
+        <section (click)="onPopupCar(car)" class="card-car">
+          <header class="card-car-header content flow">
+            <h3>{{ car.marca }} {{ car.modelo }}</h3>
+            <div class="metas">
+              <div class="ocupantes">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z">
+                  </path>
+                </svg>
+                {{ car.ocupantes }}
+              </div>
+              <div class="car-tipo">
+                @if( car.transmision === 'Mecánico') {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 16">
+                  <path
+                    d="M2.444 3.518A1.741 1.741 0 114.75 5.167v2.27h3.48v-2.27a1.742 1.742 0 111.127 0v2.27h3.482l.004-2.269a1.742 1.742 0 111.12 0l.003 2.82a.585.585 0 01-.576.575H9.358v2.27a1.742 1.742 0 11-1.127 0v-2.27H4.75v2.27a1.742 1.742 0 11-1.127 0V5.166a1.743 1.743 0 01-1.178-1.649z">
+                  </path>
+                </svg>
+                } @else if (car.transmision === 'Automático') {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M9.93 13.5h4.14L12 7.98 9.93 13.5zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.29 15.88l-.9-2.38H9.17l-.89 2.37a.968.968 0 11-1.81-.69l4.25-10.81c.22-.53.72-.87 1.28-.87s1.06.34 1.27.87l4.25 10.81a.968.968 0 01-.9 1.32c-.4 0-.76-.25-.91-.62z">
+                  </path>
+                </svg>
+                }
+                {{ car.transmision }}
+              </div>
             </div>
-            <div class="car-tipo">
-              @if( car.transmision === 'Mecánico') {
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 16">
-                <path
-                  d="M2.444 3.518A1.741 1.741 0 114.75 5.167v2.27h3.48v-2.27a1.742 1.742 0 111.127 0v2.27h3.482l.004-2.269a1.742 1.742 0 111.12 0l.003 2.82a.585.585 0 01-.576.575H9.358v2.27a1.742 1.742 0 11-1.127 0v-2.27H4.75v2.27a1.742 1.742 0 11-1.127 0V5.166a1.743 1.743 0 01-1.178-1.649z">
-                </path>
-              </svg>
-              } @else if (car.transmision === 'Automático') {
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M9.93 13.5h4.14L12 7.98 9.93 13.5zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.29 15.88l-.9-2.38H9.17l-.89 2.37a.968.968 0 11-1.81-.69l4.25-10.81c.22-.53.72-.87 1.28-.87s1.06.34 1.27.87l4.25 10.81a.968.968 0 01-.9 1.32c-.4 0-.76-.25-.91-.62z">
-                </path>
-              </svg>
-              }
-              {{ car.transmision }}
-            </div>
-          </div>
-        </header>
+          </header>
 
-        <section class="card-car-body">
-          <figure class="card-image">
-            <img class="start " [src]="car.imagen" [alt]="car.modelo" [style.view-transition-name]="car.id">
-          </figure>
+          <section class="card-car-body">
+            <figure class="card-image">
+              <img class="start " [src]="car.imagen" [alt]="car.modelo" [style.view-transition-name]="car.id">
+            </figure>
+          </section>
+
+          <footer class="card-car-footer content">
+            <div><strong>S/ {{ car.price }} <span>/ día</span></strong> </div>
+          </footer>
         </section>
-
-        <footer class="card-car-footer content">
-          <div><strong>S/ {{ car.price }} <span>/ día</span></strong> </div>
-        </footer>
+        }
+        <!-- } -->
+      </div>
+    } @placeholder {
+      <section class="grid-cards">
+        @for ( card of [0,1,2,3,4,5,6,7,8]; track $index) {
+          <skeleton-car />
+        }
       </section>
-      }
-      }
-    </div>
+    } @loading (minimum 2s){
+      <section class="grid-cards">
+        @for ( card of [0,1,2,3,4,5,6,7,8]; track $index) {
+          <skeleton-car />
+        }
+      </section>
+    }
   </div>
-</section>
+  </section>
+
 
 <!-- <app-popup-car [car]="itemCar()" /> -->
 

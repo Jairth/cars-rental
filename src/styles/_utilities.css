@@ -24,6 +24,8 @@
   position: relative;
   padding: 12px 36px;
   font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
   color: var(--color);
   background: var(--color-white);
   border: none;
@@ -31,7 +33,10 @@
   isolation: isolate;
   overflow: hidden;
   cursor: pointer;
-  transition: color 0.5s ease;
+  min-height: 2.8125rem;
+  transition:
+    color var(--duration-short) var(--ease-in-out),
+    background var(--duration-short) var(--ease-in-out);
 
   &::before{
   content: '';
@@ -64,6 +69,15 @@
   }
 }
 
+.btn[focused] {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+
+  &::before {
+    background-color: transparent;
+  }
+}
+
 .title-banner {
   font-size: var(--fs-title-banner);
   font-weight: 700;
@@ -85,4 +99,90 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(24rem,100%), 1fr));
   gap: 1.75rem;
+}
+
+.link{
+  text-decoration: none;
+  color: var(--color-link, var(--color-white));
+  transition: color var(--duration-short) var(--ease-in-out);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.container-form {
+  width: 100%;
+  max-width: 450px;
+  padding: var(--padding-block-form) var(--padding-inline-form);
+  border: 1px solid var(--color-gray);
+  background-color: #111111;
+  border-radius: 12px;
+  text-align: center;
+
+  p {
+    margin-block-end: 0;
+  }
+}
+
+textarea {
+  outline: none;
+}
+
+.input-custom {
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-white);
+  outline: none;
+  border-radius: var(--border-input);
+  border: 1px solid var(--color-gray);
+  padding: 1rem;
+  transition: border-color var(--duration-short) var(--ease-in-out);
+
+  &::placeholder {
+    color: var(--color-gray);
+    transition: color var(--duration-short) var(--ease-in-out);
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+
+  &:focus, &:focus-within {
+    border-color: var(--color-primary);
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+:is(input, textarea):optional {
+  border-color: var(--color-gray);
+}
+:is(input, textarea):optional:focus {
+  border-color: #ff4d4d;
+}
+:is(input, textarea):focus {
+  border-color: #00FE67;
+}
+
+:is(input, textarea):optional:focus:valid {
+  border-color: #00FE67;
+}
+:is(input, textarea):optional:focus:invalid {
+  border-color: #ff4d4d;
+}
+
+:is(input, textarea):required:valid {
+  border-color: #00FE67;
+}
+:is(input):not(:placeholder-shown):valid {
+  border-color: #00FE67;
+}
+:is(input, textarea):focus:invalid {
+  border-color: #ff4d4d;
 }
