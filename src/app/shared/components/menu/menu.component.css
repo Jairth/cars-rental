@@ -21,19 +21,25 @@
   }
 }
 
+.link {
+  --color-link: var(--color-black);
+}
+
 .header__nav {
   position: absolute;
-  top: 0;
+  top: -4px;
   right: 0;
-  background-color: var(--color-primary);
-  height: 100%;
+  background-color: var(--color-secondary);
+  height: calc(100% + 4px);
   width: 100%;
   z-index: 0;
 
   display: grid;
+  align-content: flex-start;
   grid-template-columns: minmax(0,1fr) clamp(17.5rem, 6.5957rem + 34.8936vi, 38rem);
 
-  clip-path: circle(0.3% at 100% 0);
+  /* clip-path: circle(0.3% at 100% 0); */
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   transition: clip-path 600ms ease;
 }
 
@@ -66,20 +72,23 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1.875rem;
-  padding-block-end: 1.5rem;
+  /* padding-block-end: 1.5rem; */
 }
-/* .social__icon path,
-.social__icon--youtube path {
-  transition: fill 350ms ease;
-} */
 .header__icons--link {
-  display: inline-block;
-  opacity: 0;
-  /* transform: translate3d(10px,-10px,0); */
-  /* &:hover .social__icon path, &:hover .social__icon--youtube path{
-    fill: var(--cl-black-base);
-  } */
+  display: inline-flex;
+  /* opacity: 0;
+  transform: translate3d(10px,-10px,0); */
+  &:hover svg path {
+    fill: var(--color-primary);
+    transition: fill 350ms ease;
+  }
 }
+
+/* .header__icons--link:hover svg path {
+  fill: var(--color-primary);
+  transition: fill 350ms ease;
+
+} */
 /* .header .title {
   text-align: left;
 } */
@@ -92,7 +101,7 @@
   }
 
   .header__nav{
-    clip-path: circle(141.2% at 100% 0);
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
     z-index: 4;
   }
   .active {
@@ -101,5 +110,42 @@
 
   .header__a, .header__icons--link {
     opacity: 1;
+  }
+}
+
+.social__icon {
+  width: clamp(1.5rem, 1.2727rem + 0.8081vw, 2rem);
+  height: 40px;
+}
+
+.header__contact {
+  margin-block-start: 1.5rem;
+}
+
+@media (width < 768px) {
+  .header__nav {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: max-content;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .header__ul {
+    padding-block: 4.25rem 0;
+  }
+  .header__socials {
+    justify-content: flex-start;
+    padding-block: 0;
+    padding-inline-start: 0;
+    border-left: none;
+    border-top: 2px solid var(--cl-primary);
+  }
+  .header__icons {
+    gap: clamp(0.75rem, 0.1401rem + 3.6145vi, 1.875rem);
+    border-bottom: none;
+    padding-block-end: 0;
+    padding-block-start: 2rem;
+  }
+  .header__ul {
+    align-self: flex-start;
   }
 }

@@ -1,1 +1,25 @@
-<p>register works!</p>
+<div class="container-form">
+
+  <h1>Registrate</h1>
+
+  <form class="flow">
+
+    <div class="row">
+      <label for="usuario">Correo</label>
+      <input class="input-custom" type="email" id="usuario" name="usuario" placeholder="Ingrese su correo electrónico"
+        required>
+    </div>
+
+    <div class="row">
+      <label for="contraseña">Contraseña</label>
+      <input class="input-custom" type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña"
+        required>
+    </div>
+
+    <button class="btn">Registrarse</button>
+
+    <p>¿Tienes una cuenta? <a routerLink="/session/login" class="link">Inicia sesión</a></p>
+
+  </form>
+
+</div>

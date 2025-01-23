@@ -12,7 +12,12 @@
 .header-left {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+
+  & h2 {
+    margin: 0;
+  }
 }
 
 .header-right {
@@ -50,5 +55,17 @@
 
   & img {
     filter: invert(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-right .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-left h2 {
+    font-size: 1rem;
   }
 }

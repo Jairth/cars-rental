@@ -11,7 +11,7 @@ export default [
 			},
 			{
 				path: "list-offers",
-				loadComponent: () => import("../list-cars/ui/list-cars-page.component"),
+				loadChildren: () => import("../list-cars/list-cars.routes"),
 			},
 			{
 				path: "checkout-offers",
@@ -28,7 +28,7 @@ export default [
 			},
 			{
 				path: "**",
-				redirectTo: "/home",
+				redirectTo: "home",
 			},
 		],
 	},
