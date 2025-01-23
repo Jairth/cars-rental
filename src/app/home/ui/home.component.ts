@@ -11,4 +11,5 @@ export default class HomeComponent {
 	private homeService = inject(HomeService);
 
 	public listClients = this.homeService.clients;
+	public listTestimonials = this.homeService.testimonials;
 }

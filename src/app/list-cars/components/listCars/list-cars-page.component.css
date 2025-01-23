@@ -35,6 +35,11 @@
   gap: 1rem;
 }
 
+.card-car-body {
+  display: flex;
+  justify-content: center;
+}
+
 .ocupantes, .car-tipo {
   gap: 0.3rem;
   padding-inline: 0.75rem;

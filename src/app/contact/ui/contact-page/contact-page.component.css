@@ -1,0 +1,54 @@
+.page-contact {
+  padding-block: 1rem 3rem;
+}
+.row {
+  --direction: row;
+
+  & div {
+    flex: 1;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.container-left, .container-right {
+  flex: 1;
+}
+
+form.flow {
+  --flow-space: 2rem;
+}
+
+.title {
+  line-height: 1.2;
+  margin-block-end: 1rem;
+}
+
+.paragraph {
+  margin-block-end: 2.5rem;
+}
+
+.container-right {
+  & figure {
+    margin: 0;
+  }
+
+  & img {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .container-left, .container-right {
+    flex: 1;
+  }
+
+}
