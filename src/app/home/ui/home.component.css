@@ -1,3 +1,7 @@
+:host(.flow) {
+  --flow-space: 10rem;
+}
+
 .wrapper {
   --height: 100%;
 }
