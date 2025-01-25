@@ -6,6 +6,9 @@ import { HomeService } from "../services/home.service";
 	imports: [],
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.css",
+	host: {
+		class: "flow"
+	}
 })
 export default class HomeComponent {
 	private homeService = inject(HomeService);
