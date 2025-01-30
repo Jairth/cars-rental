@@ -111,6 +111,11 @@
   }
 }
 
+.error-form {
+  color: var(--color-error);
+  font-size: 0.85rem;
+}
+
 .container-form {
   width: 100%;
   max-width: 450px;

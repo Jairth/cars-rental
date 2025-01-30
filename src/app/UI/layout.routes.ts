@@ -27,6 +27,10 @@ export default [
 					import("../contact/ui/contact-page/contact-page.component"),
 			},
 			{
+				path: "profile",
+				loadComponent: () => import("../profile/ui/layout/layout.component"),
+			},
+			{
 				path: "**",
 				redirectTo: "home",
 			},

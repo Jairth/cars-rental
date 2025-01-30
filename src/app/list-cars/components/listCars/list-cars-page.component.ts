@@ -1,23 +1,20 @@
 import {
-	ChangeDetectorRef,
 	Component,
 	DestroyRef,
 	inject,
 	signal,
 	viewChild,
-	viewChildren,
 } from "@angular/core";
 import { CarsService } from "../../services/cars.service";
-import { AsyncPipe } from "@angular/common";
 import type { Vehiculo } from "../../interface/cars.interface";
-import { Router, RouterLink } from "@angular/router";
+import { Router } from "@angular/router";
 import PopupCarComponent from "../popup-car/popup-car.component";
 import { SkeletonListCarComponent } from "@shared/components/skeleton-list-car/skeleton-list-car.component";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
 	selector: "app-list-cars-page",
-	imports: [AsyncPipe, SkeletonListCarComponent],
+	imports: [SkeletonListCarComponent],
 	templateUrl: "./list-cars-page.component.html",
 	styleUrl: "./list-cars-page.component.css",
 })
@@ -25,9 +22,8 @@ export default class ListCarsPageComponent {
 	private carsService = inject(CarsService);
 	private router = inject(Router);
 	private destroy = inject(DestroyRef);
-	private cdr = inject(ChangeDetectorRef);
 
-	public listCars: Vehiculo[] = [];
+	public listCars: Vehiculo[] | undefined = [];
 	public popup = viewChild(PopupCarComponent);
 	// public car = signal<Vehiculo>(null)
 	public itemCar = signal<Vehiculo>({

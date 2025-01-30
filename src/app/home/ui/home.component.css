@@ -74,6 +74,11 @@
   padding: 1em;
   font-family: Arial, sans-serif;
   box-shadow: 1px 1px 1px 2px #ffffff08;
+
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 @keyframes scale {
@@ -210,4 +215,89 @@
 .testimonial:hover .testimonial-text .text-hidden {
     translate: 0 0;
     opacity: 1;
+}
+
+.list-faqs.flow {
+  --flow-space: 2rem;
+}
+
+.list-faqs {
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+details {
+  border-bottom: 1px solid #ff7020;
+  overflow: hidden;
+  padding-inline: 2rem;
+  transition: all 0.5s ease;
+}
+
+summary {
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding-block: 2rem;
+  /* background-color: #fbfbfb; */
+  outline: none;
+  transition: all 0.3s ease;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url('https://cdn0.iconfinder.com/data/icons/silhouette-car-tyres-and-wheels/1200/tire_wheel_automobile_car_disk_shadow_silhouette_1-512.png');
+  background-size: cover;
+  background-position: center;
+  filter: invert(1);
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+summary:hover {
+  /* background-color: #eaeaea; */
+  color: #ff7020;
+}
+
+details p {
+  font-size: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+details[open] p {
+  max-height: 500px;
+  opacity: 1;
+  animation: 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+details:not([open]) p {
+  animation: none;
+  opacity: 0;
+  max-height: 0;
 }

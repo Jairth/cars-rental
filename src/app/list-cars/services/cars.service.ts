@@ -1,4 +1,4 @@
-import { inject, Injectable } from "@angular/core";
+import { inject, Injectable, resource } from "@angular/core";
 import { from, map } from "rxjs";
 import { SupabaseService } from "../../shared/services/supabase.service";
 import type { Vehiculo } from "../interface/cars.interface";
@@ -14,4 +14,5 @@ export class CarsService {
 			this.supabaseClient.from("vehiculo").select("*").returns<Vehiculo[]>(),
 		).pipe(map((data) => data.data));
 	}
+
 }

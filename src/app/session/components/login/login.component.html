@@ -2,18 +2,22 @@
 
   <h1>Iniciar Sesión</h1>
 
-  <form class="flow">
+  <form class="flow" [formGroup]="loginForm()" (ngSubmit)="signIn()">
 
     <div class="row">
       <label for="usuario">Correo</label>
-      <input class="input-custom" type="email" id="usuario" name="usuario" placeholder="Ingrese su correo electrónico"
-        required>
+      <input class="input-custom" type="email" id="usuario" name="usuario" placeholder="Ingrese su correo electrónico" required formControlName="email">
+      @if(hasError('email')) {
+      <p class="error-form">El correo electrónico es requerido</p>
+      }
     </div>
 
     <div class="row">
       <label for="contraseña">Contraseña</label>
-      <input class="input-custom" type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña"
-        required>
+      <input class="input-custom" type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required formControlName="password">
+      @if(hasError('password')) {
+        <p class="error-form">La contraseña es requerida</p>
+        }
     </div>
 
     <button class="btn">Iniciar sesión</button>
