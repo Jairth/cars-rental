@@ -3,6 +3,7 @@
   --color-secondary: oklch(98.81% 0 0);
   --color-black: oklch(17.76% 0 0);
   --color-gray: oklch(83.77% 0.0083 286.22);
+  --color-error: #ff3333;
 
 
   /* Paddings */
