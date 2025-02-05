@@ -37,6 +37,8 @@ export default class LoginComponent {
 
 		const { email, password } = this.loginForm().value;
 		const result = await this.sesionsService.logIn(email!, password!);
+		const authToken = localStorage.getItem("sb-ycmtrsipzymqgigyfhnu-auth-token");
+		const typeClient = authToken ? JSON.parse(authToken).user.user_metadata.role : null;
 
 		// console.log(result)
 		// if(result) {
@@ -44,8 +46,11 @@ export default class LoginComponent {
 		// 	localStorage.setItem("user_meta", JSON.stringify(result.data?.user?.user_metadata ?? ''))
 		// }
 		if (result.data) {
+			console.log(typeClient);
 			this.resetForm();
-			this.router.navigate(["/list-offers"]);
+			if(typeClient === "cliente") {
+				this.router.navigate(["/list-offers"]);
+			}
 		} else {
 			this.resetForm();
 			console.error("Error durante el inicio de sesión:", result.error);
