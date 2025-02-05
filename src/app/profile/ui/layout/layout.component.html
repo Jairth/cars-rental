@@ -1,30 +1,30 @@
 <div class="container">
   <h2>Mi perfil</h2>
-  <form class="formulario">
+  <form class="formulario" [formGroup]="formProfile" (ngSubmit)="onSubmit()">
     <div class="right flow">
       <div class="row">
-        <label for="nombre">Nombre y Apellido</label>
-        <input class="input-custom" type="text" id="nombre" name="nombre" placeholder="Nombres">
+        <label for="name">Nombre y Apellido</label>
+        <input class="input-custom" type="text" id="name" name="name" placeholder="Nombres" formControlName="nombre">
       </div>
       <div class="row">
-        <label for="correo">Correo Electrónico</label>
-        <input class="input-custom" type="email" id="correo" name="correo" placeholder="Correo Electrónico">
+        <label for="email">Correo Electrónico</label>
+        <input class="input-custom" type="email" id="email" name="email" placeholder="Correo Electrónico" formControlName="email">
       </div>
       <div class="row">
         <label for="date">Fecha Nacimiento</label>
         <input class="input-custom" type="date" id="date" name="date"
-          placeholder="Fecha de nacimiento">
+          placeholder="Fecha de nacimiento" formControlName="nacimiento">
       </div>
       <div class="row">
-        <label for="celular">Celular</label>
-        <input class="input-custom" type="tel" id="celular" name="celular" placeholder="Número de celular">
+        <label for="phone">Celular</label>
+        <input class="input-custom" type="tel" id="phone" name="phone" placeholder="Número de celular" formControlName="celular">
       </div>
     </div>
 
     <div class="left flow">
       <div class="row">
         <label for="type_document">Tipo de documento</label>
-        <select class="input-custom" id="type_document" name="type_document">
+        <select class="input-custom" id="type_document" name="type_document" formControlName="tipo_documento">
           <option value="dni">DNI</option>
           <option value="pasaporte">Pasaporte</option>
           <option value="carnet_extranjeria">Carnet de extranjería</option>
@@ -32,11 +32,11 @@
       </div>
       <div class="row">
         <label for="nro_document">Número de documento</label>
-        <input class="input-custom" type="text" id="nro_document" name="nro_document" placeholder="Número de documento">
+        <input class="input-custom" type="text" id="nro_document" name="nro_document" placeholder="Número de documento" formControlName="documento">
       </div>
       <div class="row">
         <label for="preference_comunication">Preferencia de comunicación</label>
-        <select class="input-custom" id="preference_comunication" name="preference_comunication">
+        <select class="input-custom" id="preference_comunication" name="preference_comunication" formControlName="preferencia_comunicacion">
           <option value="whatsapp">Whatsapp</option>
           <option value="email">Email</option>
           <option value="llamada">Telegram</option>
@@ -44,11 +44,9 @@
       </div>
       <div class="row">
         <label for="licence">Licencia</label>
-        <input class="input-custom" type="text" id="licence" name="licence" placeholder="Número de licencia">
+        <input class="input-custom" type="text" id="licence" name="licence" placeholder="Número de licencia" formControlName="licencia">
       </div>
       <button class="btn">Guardar</button>
     </div>
-
-
   </form>
 </div>

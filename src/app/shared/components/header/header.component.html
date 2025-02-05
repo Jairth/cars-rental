@@ -11,7 +11,12 @@
       <ul>
         <li><a routerLink="/list-offers">Autos</a></li>
         <li><a routerLink="/contact">Contáctanos</a></li>
-        <li><a routerLink="/session/login">Iniciar sesión</a></li>
+        <li>
+          <a [routerLink]="typeClient === 'cliente' ? '/profile': '/session/login'"> {{ typeClient === 'cliente' ? 'Perfil' : "Iniciar sesión" }} </a>
+        </li>
+        <li (click)="logOut()">
+          <a href="">{{ typeClient === 'cliente' ? 'Cerrar sesión' : "" }}</a>
+        </li>
       </ul>
     </nav>
 

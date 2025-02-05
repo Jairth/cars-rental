@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Component, inject } from "@angular/core";
+import { Router, RouterLink } from "@angular/router";
 import { MenuComponent } from "../menu/menu.component";
 
 @Component({
@@ -11,4 +11,15 @@ import { MenuComponent } from "../menu/menu.component";
 		class: "wrapper",
 	},
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+
+	private router = inject(Router)
+
+	public authToken = localStorage.getItem("sb-ycmtrsipzymqgigyfhnu-auth-token");
+	public typeClient = this.authToken ? JSON.parse(this.authToken).user.user_metadata.role : null;
+
+	logOut() {
+		localStorage.removeItem("sb-ycmtrsipzymqgigyfhnu-auth-token");
+		this.router.navigate(["/session/login"]);
+	}
+}
