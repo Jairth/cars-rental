@@ -58,11 +58,11 @@ input {
 
 .tarjeta ul {
   list-style-type: none;
-  padding: 0;
 }
 
 .tarjeta ul li {
-  list-style-type: '✔';
+  list-style-type: '-';
+  padding-inline-start: 10px;
   margin: 5px 0;
 }
 
@@ -70,4 +70,10 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media (max-width: 650px ) {
+  .container {
+    flex-direction: column-reverse;
+  }
 }

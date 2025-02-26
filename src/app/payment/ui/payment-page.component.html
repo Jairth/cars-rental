@@ -1,1 +1,75 @@
-<p>payment-page works!</p>
+@if(!paymentLoading) {
+  <div class="container">
+    <form class="formulario flow" [formGroup]="formPayment" (ngSubmit)="onSubmit()">
+      <h2>Pago final</h2>
+
+      <!-- <h3>Datos obligatorios</h3> -->
+
+      <!-- <div class="row">
+        <label for="alquiler">Alquiler</label>
+        <input class="input-custom" type="text" id="alquiler" name="alquiler" placeholder="Alquiler" formControlName="alquiler_id">
+      </div> -->
+
+      <div class="row">
+        <label for="monto">Costo</label>
+        <input class="input-custom" type="number" id="monto" name="monto" placeholder="Costo" formControlName="monto_vehiculo">
+      </div>
+
+      <div class="row">
+        <label for="fecha-pago">Fecha del pago</label>
+        <input class="input-custom" type="date" id="fecha-pago" name="fecha-pago" placeholder="Fecha del pago" formControlName="fecha_pago">
+      </div>
+
+      <div class="row">
+        <label for="metodo-pago">Método del pago</label>
+        <select class="input-custom select-custom" name="metodo-pago" id="metodo-pago" formControlName="metodo_pago">
+          <option value="Transferencia">Transferencia</option>
+          <option value="Yape">Yape</option>
+          <option value="Tarjeta de Credito">Tarjeta de Crédito</option>
+        </select>
+        <!-- <input class="input-custom" type="text" id="metodo-pago" name="metodo-pago"
+          placeholder="Método del pago" formControlName="metodo_pago"> -->
+      </div>
+
+      <!-- <div class="row">
+        <label for="estado">Estado</label>
+        <input class="input-custom" type="text" id="estado" name="estado" placeholder="Estado" formControlName="estado_id">
+      </div> -->
+
+      <div class="row">
+        <label for="monto-adicional">Garantía</label>
+        <input class="input-custom" type="number" id="monto-adicional" name="monto-adicional" placeholder="Garantía" formControlName="monto_adicional">
+      </div>
+
+      <div class="row">
+        <label for="igv">IGV</label>
+        <input class="input-custom" type="number" id="igv" name="igv" placeholder="IGV" formControlName="monto_igv">
+      </div>
+
+      <div class="row">
+        <label for="monto-total">Monto total</label>
+        <input class="input-custom" type="number" id="monto-total" name="monto-total" placeholder="Monto total" formControlName="monto_total">
+      </div>
+
+      <!-- <div class="row">
+        <label for="comprobante">Comprobante</label>
+        <input class="input-custom" type="text" id="comprobante" name="comprobante" placeholder="Número de celular" formControlName="comprobante">
+      </div> -->
+      <button class="btn">
+        Pagar
+      </button>
+    </form>
+    <div class="tarjeta">
+      <figure>
+        <img src="/assets/home/camaro.webp" alt="Auto Escarabajo">
+      </figure>
+    </div>
+  </div>
+} @else {
+  <div class="messageFinal">
+    <div>
+      <h2>¡Gracias por tu compra!</h2>
+      <p>En breve te llegará un correo con los detalles de tu compra.</p>
+    </div>
+  </div>
+}

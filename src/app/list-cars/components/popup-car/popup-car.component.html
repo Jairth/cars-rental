@@ -49,6 +49,18 @@
     </div>
     <div class="card-right">
       <div class="info">
+        <h5>Opción de reserva</h5>
+        <div class="referencia">
+          <div class="texts">
+            <h6>Flexible</h6>
+            <p>Pague en la recogida, cancelación gratuita y reserva en cualquier momento antes de la hora de recogida.</p>
+          </div>
+          <div class="meta">
+            <strong>Incluido</strong>
+          </div>
+        </div>
+      </div>
+      <div class="info">
         <h5>Kilometraje</h5>
         <div class="referencia">
           <div class="texts">
@@ -64,7 +76,7 @@
         <div>
           <strong>S/ {{ itemCar().price }} <small>/ día</small></strong>
         </div>
-        <button class="btn" routerLink="/checkout-offers">
+        <button class="btn" (click)="routeCheckout()">
           Alquilar
         </button>
       </div>

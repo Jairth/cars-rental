@@ -78,6 +78,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     border: 2px solid #fff;
     border-radius: 1rem;
     padding: 12px 1rem;
@@ -101,4 +102,11 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+@media (max-width: 769px) {
+  .card-car {
+    flex-direction: column;
+  }
 }

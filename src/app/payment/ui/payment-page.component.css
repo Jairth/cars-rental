@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+
+  & .flow {
+    --flow-space: 2rem;
+  }
+}
+
+.formulario, .tarjeta {
+  flex: 1;
+}
+
+/* label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 96%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
+} */
+
+.edad {
+  display:flex;
+  margin-top: 15px;
+}
+
+.edad-check{
+  width: 10%;
+  margin-top: 15px;
+}
+
+.edad-check:checked {
+  accent-color: var(--color-primary);
+}
+
+.modelo-vehiculo{
+  display:flex;
+  gap:5px
+}
+
+.tarjeta {
+  & figure {
+    margin: 0;
+  }
+
+  & img {
+    border-radius: 1rem;
+  }
+}
+
+/* .select-custom:not(:has(option:checked[value=""])) {
+  color: #fff;
+} */
+
+.select-custom {
+  color: #fff;
+}
+
+.select-custom option {
+  background-color: black;
+  color: white;
+}
+
+.messageFinal {
+  display: flex;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 104px);
+  text-align: center;
+}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width: 650px ) {
+  .container {
+    flex-direction: column;
+  }
+}

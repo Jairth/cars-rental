@@ -1,40 +1,47 @@
 <div class="container">
-  <form class="formulario flow">
-    <h2>¿Quién Conducirá?</h2>
+  <form class="formulario flow" [formGroup]="formCheckout" (ngSubmit)="onSubmit()">
+    <!-- <h2>¿Quién Conducirá?</h2> -->
 
-    <h3>Datos obligatorios</h3>
+    <h3>Datos obligatorios para el alquiler</h3>
 
     <div class="row">
-      <label for="nombre">Nombres</label>
-      <input class="input-custom" type="text" id="nombre" name="nombre" placeholder="Nombres">
+      <div>
+        <label for="nombre">Fecha Inicio</label>
+        <input class="input-custom" type="date" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha de inicio de alquiler" formControlName="fecha_inicio">
+      </div>
+
+      <div>
+        <label for="apellido">Fecha Final</label>
+        <input class="input-custom" type="date" id="fecha_fin" name="fecha_fin" placeholder="Fecha final del alquiler" formControlName="fecha_fin">
+      </div>
     </div>
 
     <div class="row">
-      <label for="apellido">Apellidos</label>
-      <input class="input-custom" type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+      <label for="correo">Adicional</label>
+      <input class="input-custom" type="text" id="adicional" name="adicional" placeholder="Adicional" formControlName="adicional">
     </div>
 
     <div class="row">
-      <label for="correo">Correo Electrónico</label>
-      <input class="input-custom" type="email" id="correo" name="correo" placeholder="Correo Electrónico">
+      <label for="direccion">Seguro</label>
+      <input class="input-custom" type="text" id="seguro" name="seguro"
+        placeholder="Ingrese el seguro" formControlName="seguro">
     </div>
+
 
     <div class="row">
       <label for="direccion">Dirección de Entrega</label>
-      <input class="input-custom" type="text" id="direccion" name="direccion"
-        placeholder="Ingrese dirección donde se hará entrega del vehiculo">
+      <input class="input-custom" type="text" id="lugar_entrega" name="lugar_entrega"
+        placeholder="Ingrese dirección donde se hará entrega del vehiculo" formControlName="lugar_entrega">
     </div>
 
     <div class="row">
-      <label for="celular">Celular</label>
-      <input class="input-custom" type="tel" id="celular" name="celular" placeholder="Número de celular">
+      <label for="celular">Garantía</label>
+      <input class="input-custom" type="number" id="garantia" name="garantia" placeholder="Monto para la garantía" formControlName="garantia">
     </div>
 
-    <!-- <div class="row">
-      <input type="checkbox" class="edad-check" id="edad-check" name="edad-check">
-      <label for="edad-check">Tengo 18 años o más</label>
-    </div> -->
-
+    <button class="btn">
+      Continuar
+    </button>
   </form>
 
   <div class="tarjeta">
@@ -46,12 +53,12 @@
           alt="Image description" width="92" height="72">
       </figure>
       <div>
-        <p><strong>Toyota Agya 1.0</strong></p>
-        <p>alquiler ppor 12 días</p>
+        <p><strong>{{ itemCar().marca }} {{ itemCar().modelo }}</strong></p>
+        <p>Alquiler por {{ daysRent() || ' __ '}} días</p>
       </div>
     </div>
-    <p><strong>Entrega:</strong> Lima Miraflores<br>Dom, 02 feb 2025 | 12:30 PM</p>
-    <p><strong>Retorno:</strong> Lima Miraflores<br>Mar, 04 feb 2025 | 12:30 PM</p>
+    <!-- <p><strong>Entrega:</strong> Lima Miraflores<br>Dom, 02 feb 2025 | 12:30 PM</p>
+    <p><strong>Retorno:</strong> Lima Miraflores<br>Mar, 04 feb 2025 | 12:30 PM</p> -->
     <ul>
       <li>Seguro de terceros</li>
       <li>Libre de responsabilidad por daños y pérdidas hasta $2000.00</li>
