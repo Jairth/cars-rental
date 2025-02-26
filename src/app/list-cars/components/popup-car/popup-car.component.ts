@@ -1,7 +1,6 @@
 import { Component, inject, input, signal } from "@angular/core";
 import type { Vehiculo } from "../../interface/cars.interface";
-import { NgStyle } from "@angular/common";
-import { ActivatedRoute, Router, RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
 	selector: "app-popup-car",
@@ -10,7 +9,8 @@ import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 	styleUrl: "./popup-car.component.css",
 })
 export default class PopupCarComponent {
-	private router = inject(ActivatedRoute);
+	private router = inject(Router);
+
 	car = input<Vehiculo>();
 	itemCar = signal<Vehiculo>({
 		id: 0,
@@ -32,14 +32,21 @@ export default class PopupCarComponent {
 
 	ngOnInit() {
 		const state = history.state;
-		console.log(this.car());
+		// console.log(state);
 		if (state?.car) {
 			this.itemCar.set(state.car);
-			console.log(this.car()); // Muestra el objeto `car`
+			// console.log(this.car());
 		} else {
 			console.log("No se ha recibido el objeto `car` desde el estado");
 		}
 
-		console.log(this.itemCar());
+		// console.log(this.itemCar());
+	}
+
+	routeCheckout() {
+		// console.log(this.itemCar());
+		this.router.navigate(["/checkout-offers"], {
+			state: { car: this.itemCar() },
+		});
 	}
 }
