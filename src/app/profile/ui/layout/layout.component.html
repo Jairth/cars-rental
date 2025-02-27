@@ -50,3 +50,35 @@
     </div>
   </form>
 </div>
+
+<div class="container">
+  <div class="dashboard__body">
+    <h1 class="subtitle">Autos alquilados</h1>
+    <div class="list__container">
+      <div class="table__wrapper">
+        <table>
+          <thead>
+            <th>ID Vehículo</th>
+            <th>Vehículo</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th></th>
+          </thead>
+          <tbody>
+            @for (rent of carsRentUser; track rent.id) {
+              <tr>
+                <td>{{ rent.vehiculo_id }}</td>
+                <td>{{ rent.marca }} - {{ rent.modelo }}</td>
+                <td>{{ rent.fecha_inicio }}</td>
+                <td>{{ rent.fecha_fin }}</td>
+                <td>
+
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,4 +20,12 @@ export class ProfileService {
       this.supabaseClient.from("cliente").update(client).eq("id", id).select()
     )
   }
+
+  getRentCar() {
+		return from(this.supabaseClient.from("alquiler").select("*").returns());
+	}
+
+  getCar() {
+    return from(this.supabaseClient.from("vehiculo").select("*").returns());
+  }
 }
