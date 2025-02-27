@@ -11,19 +11,18 @@
   <div class="wrapper flow">
     <div class="texts">
       <h2 class="title">Nuestro catálogo</h2>
-      <p class="paragraph">Ut sapien eros, tincidunt enim amet id sociis aliqua velit auctor mauris quamol donec id ac
-        sed ultricies
-        aliquam aliquet quis imperdiet in enim mi at nibh</p>
+      <p class="paragraph">Explora nuestra amplia variedad de vehículos, desde autos compactos ideales para la ciudad hasta SUVs perfectos para aventuras familiares. Todos nuestros modelos están cuidadosamente seleccionados y mantenidos para ofrecerte seguridad y comodidad en cada viaje.</p>
     </div>
     <div class="grid-cards">
       @for (client of listClients; track $index) {
       <a class="clients-card">
         <h3>{{ client.name }}</h3>
         <div class="logo-and-bg-video">
-          <video autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
+          <!-- <video autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
             <source [src]="client.source_mp4">
             <source [src]="client.source_webp">
-          </video>
+          </video> -->
+          <img [src]="client.img" [alt]="client.name">
         </div>
         <div class="clients-overlay"></div>
       </a>
@@ -36,22 +35,17 @@
   <div class="wrapper">
     <div class="texts">
       <h2 class="title">Conócenos</h2>
-      <p class="paragraph">Ut sapien eros, tincidunt enim amet id sociis aliqua velit auctor mauris quamol donec id ac
-        sed ultricies
-        aliquam aliquet quis imperdiet in enim mi at nibh</p>
+      <p class="paragraph"> Con años de experiencia en el sector de alquiler de autos, ofrecemos vehículos confiables, un servicio personalizado y soluciones adaptadas a tus necesidades. Ya sea para un viaje de negocios, vacaciones o un desplazamiento diario, estamos aquí para hacer tu recorrido más fácil y seguro.</p>
     </div>
     <ul id="cards">
       <li class="card" id="card_1" style="--index:1">
         <div class="card_content">
           <div>
-            <h2>Card one</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fuga, quos nulla veritatis
-              molestias,
-              ab, reiciendis illo repellat iure est corporis sunt nemo. Praesentium corrupti, doloremque a veritatis
-              pariatur placeat!</p>
+            <h2>Visión</h2>
+            <p>Queremos ser tu primera opción en alquiler de autos, destacándonos por nuestra innovación, calidad de servicio y compromiso con la satisfacción total de nuestros clientes. Aspiramos a expandirnos y seguir conectando personas con sus destinos de manera eficiente y sostenible.</p>
           </div>
           <figure>
-            <img src="https://scroll-driven-animations.style/demos/stacking-cards/shared/img-1.jpg"
+            <img src="assets/home/camaro.webp"
               alt="Image description" width="358" height="363">
           </figure>
         </div>
@@ -59,14 +53,11 @@
       <li class="card" id="card_2" style="--index:2">
         <div class="card_content">
           <div>
-            <h2>Card two</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fuga, quos nulla veritatis
-              molestias,
-              ab, reiciendis illo repellat iure est corporis sunt nemo. Praesentium corrupti, doloremque a veritatis
-              pariatur placeat!</p>
+            <h2>Misión</h2>
+            <p>Nuestra misión es ofrecer una experiencia de alquiler de autos sencilla, rápida y confiable. Nos esforzamos por brindar vehículos en excelente estado, tarifas transparentes y un servicio al cliente excepcional, para que cada viaje sea inolvidable.</p>
           </div>
           <figure>
-            <img src="https://scroll-driven-animations.style/demos/stacking-cards/shared/img-2.jpg"
+            <img src="assets/home/hombres en la oscuridad.webp"
               alt="Image description" width="358" height="363">
           </figure>
         </div>
@@ -74,14 +65,11 @@
       <li class="card" id="card_3" style="--index:3">
         <div class="card_content">
           <div>
-            <h2>Card three</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fuga, quos nulla veritatis
-              molestias,
-              ab, reiciendis illo repellat iure est corporis sunt nemo. Praesentium corrupti, doloremque a veritatis
-              pariatur placeat!</p>
+            <h2>Valores</h2>
+            <p> Nos guiamos por la integridad, la responsabilidad y la pasión por lo que hacemos. Creemos en la transparencia, el respeto y la atención al detalle, valores que nos permiten construir relaciones duraderas con nuestros clientes.</p>
           </div>
           <figure>
-            <img src="https://scroll-driven-animations.style/demos/stacking-cards/shared/img-3.jpg"
+            <img src="assets/home/el auto azul.webp"
               alt="Image description" width="358" height="363">
           </figure>
         </div>
@@ -89,14 +77,11 @@
       <li class="card" id="card_4" style="--index:4">
         <div class="card_content">
           <div>
-            <h2>Card four</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fuga, quos nulla veritatis
-              molestias,
-              ab, reiciendis illo repellat iure est corporis sunt nemo. Praesentium corrupti, doloremque a veritatis
-              pariatur placeat!</p>
+            <h2>Compromiso</h2>
+            <p>Nos comprometemos a superar tus expectativas en cada alquiler. Desde la reserva hasta la devolución del vehículo, garantizamos un proceso sin complicaciones, seguridad en cada kilómetro y un trato cercano que te haga sentir como en casa.</p>
           </div>
           <figure>
-            <img src="https://scroll-driven-animations.style/demos/stacking-cards/shared/img-1.jpg"
+            <img src="assets/home/dos autos.webp"
               alt="Image description" width="358" height="363">
           </figure>
         </div>
@@ -109,9 +94,7 @@
   <div class="wrapper flow">
     <div class="texts">
       <h2 class="title">Testimonios</h2>
-      <p class="paragraph">Ut sapien eros, tincidunt enim amet id sociis aliqua velit auctor mauris quamol donec id ac
-        sed ultricies
-        aliquam aliquet quis imperdiet in enim mi at nibh</p>
+      <p class="paragraph">Nuestros clientes son nuestra mejor garantía. Descubre lo que dicen quienes ya han confiado en nosotros para sus viajes. Sus experiencias reflejan nuestro compromiso con la calidad, la puntualidad y el servicio personalizado que nos distingue.</p>
     </div>
     <div class="grid-testimonials">
       @for (testimonial of listTestimonials; track $index) {
@@ -137,10 +120,8 @@
 <section class="faqs">
   <div class="wrapper">
     <div class="texts">
-      <h2 class="title">Testimonios</h2>
-      <p class="paragraph">Ut sapien eros, tincidunt enim amet id sociis aliqua velit auctor mauris quamol donec id ac
-        sed ultricies
-        aliquam aliquet quis imperdiet in enim mi at nibh</p>
+      <h2 class="title">Preguntas Frecuentes</h2>
+      <p class="paragraph">¿Tienes dudas? Estamos aquí para ayudarte. En esta sección encontrarás respuestas rápidas a las preguntas más comunes sobre reservas, pagos, requisitos y más. Si no encuentras lo que buscas, nuestro equipo estará encantado de asistirte.</p>
     </div>
     <div class="list-faqs flow">
       @for (question of listFaqs; track $index) {

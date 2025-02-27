@@ -67,3 +67,51 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+.dashboard__body {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.table__wrapper {
+  border: 1px solid var(--cl-gray);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 8px rgb(0 0 0 / 0.2);
+  overflow-x: auto;
+
+  & table {
+    width: 100%;
+    min-width: 60rem;
+  }
+
+  & thead th:first-child {
+    border-radius: 0.5rem 0 0 0;
+  }
+
+  & thead th:last-child {
+    border-radius:  0 0.5rem 0 0;
+  }
+
+  td, th {
+    text-align: left;
+    padding: 0.8rem 1.5rem;
+  }
+
+  & th {
+    background-color: var(--cl-black);
+    color: var(--cl-white);
+  }
+
+  & tbody tr:not(:last-child){
+    border-bottom: 1px solid var(--cl-gray);
+  }
+
+  & tbody tr {
+    background-color: var(--bg-secondary);
+  }
+
+  & tbody tr:last-child td{
+    border-radius:  0 0 0.5rem 0.5rem;
+  }
+}
