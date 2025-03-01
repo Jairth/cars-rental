@@ -38,7 +38,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dc6701d7a0b7329ccd_rebeca-miller-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/wolkswagen.gif",
 			grid_span: "big",
 		},
 		{
@@ -47,7 +47,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dcbcac400a4a67d328_lily-woods-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/giphy.gif",
 			grid_span: "small",
 		},
 		{
@@ -56,7 +56,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dccdcaeb6642c97d7f_andy-smith-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/carro2.gif",
 			grid_span: "small",
 		},
 		{
@@ -65,7 +65,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dc154299248ce63eb9_mike-warren-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/ford.gif",
 			grid_span: "small",
 		},
 		{
@@ -74,7 +74,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dcbcac400a4a67d328_lily-woods-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/mercedez.gif",
 			grid_span: "big",
 		},
 		{
@@ -83,7 +83,7 @@ export class HomeService {
 			photo:
 				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/643035dccdcaeb6642c97d7f_andy-smith-testimonial-avatar-play-webflow-ecommerce-template.jpg",
 			background_image:
-				"https://cdn.prod.website-files.com/64137e8e937fc64702ebd8fe/6436d74140275157f8b32d9a_facebook-client-video-bg-play-webflow-ecommerce-template-transcode.mp4",
+				"assets/gifs/audi.gif",
 			grid_span: "small",
 		},
 	];

@@ -1,10 +1,10 @@
 import { Component, inject, input, signal } from "@angular/core";
 import type { Vehiculo } from "../../interface/cars.interface";
-import { Router, RouterLink } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-popup-car",
-	imports: [RouterLink],
+	imports: [],
 	templateUrl: "./popup-car.component.html",
 	styleUrl: "./popup-car.component.css",
 })

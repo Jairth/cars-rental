@@ -41,8 +41,8 @@
       <li class="card" id="card_1" style="--index:1">
         <div class="card_content">
           <div>
-            <h2>Visión</h2>
-            <p>Queremos ser tu primera opción en alquiler de autos, destacándonos por nuestra innovación, calidad de servicio y compromiso con la satisfacción total de nuestros clientes. Aspiramos a expandirnos y seguir conectando personas con sus destinos de manera eficiente y sostenible.</p>
+            <h2 class="subtitle">Visión</h2>
+            <p class="paragraph">Queremos ser tu primera opción en alquiler de autos, destacándonos por nuestra innovación, calidad de servicio y compromiso con la satisfacción total de nuestros clientes. Aspiramos a expandirnos y seguir conectando personas con sus destinos de manera eficiente y sostenible.</p>
           </div>
           <figure>
             <img src="assets/home/camaro.webp"
@@ -53,8 +53,8 @@
       <li class="card" id="card_2" style="--index:2">
         <div class="card_content">
           <div>
-            <h2>Misión</h2>
-            <p>Nuestra misión es ofrecer una experiencia de alquiler de autos sencilla, rápida y confiable. Nos esforzamos por brindar vehículos en excelente estado, tarifas transparentes y un servicio al cliente excepcional, para que cada viaje sea inolvidable.</p>
+            <h2 class="subtitle">Misión</h2>
+            <p class="paragraph">Nuestra misión es ofrecer una experiencia de alquiler de autos sencilla, rápida y confiable. Nos esforzamos por brindar vehículos en excelente estado, tarifas transparentes y un servicio al cliente excepcional, para que cada viaje sea inolvidable.</p>
           </div>
           <figure>
             <img src="assets/home/hombres en la oscuridad.webp"
@@ -65,8 +65,8 @@
       <li class="card" id="card_3" style="--index:3">
         <div class="card_content">
           <div>
-            <h2>Valores</h2>
-            <p> Nos guiamos por la integridad, la responsabilidad y la pasión por lo que hacemos. Creemos en la transparencia, el respeto y la atención al detalle, valores que nos permiten construir relaciones duraderas con nuestros clientes.</p>
+            <h2 class="subtitle">Valores</h2>
+            <p class="paragraph"> Nos guiamos por la integridad, la responsabilidad y la pasión por lo que hacemos. Creemos en la transparencia, el respeto y la atención al detalle, valores que nos permiten construir relaciones duraderas con nuestros clientes.</p>
           </div>
           <figure>
             <img src="assets/home/el auto azul.webp"
@@ -77,8 +77,8 @@
       <li class="card" id="card_4" style="--index:4">
         <div class="card_content">
           <div>
-            <h2>Compromiso</h2>
-            <p>Nos comprometemos a superar tus expectativas en cada alquiler. Desde la reserva hasta la devolución del vehículo, garantizamos un proceso sin complicaciones, seguridad en cada kilómetro y un trato cercano que te haga sentir como en casa.</p>
+            <h2 class="subtitle">Compromiso</h2>
+            <p class="paragraph">Nos comprometemos a superar tus expectativas en cada alquiler. Desde la reserva hasta la devolución del vehículo, garantizamos un proceso sin complicaciones, seguridad en cada kilómetro y un trato cercano que te haga sentir como en casa.</p>
           </div>
           <figure>
             <img src="assets/home/dos autos.webp"
@@ -107,9 +107,10 @@
           </div>
         </div>
         <div class="logo-and-bg-video">
-          <video autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
+          <!-- <video autoplay loop muted playsinline data-wf-ignore="true" data-object-fit="cover">
             <source [src]="testimonial.background_image">
-          </video>
+          </video> -->
+          <img [src]="testimonial.background_image" [alt]="testimonial.name">
         </div>
       </div>
       }

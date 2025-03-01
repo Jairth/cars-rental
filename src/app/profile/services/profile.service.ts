@@ -15,7 +15,7 @@ export class ProfileService {
   }
 
   updateClient(client:any, id:string) {
-    console.log(client);
+    // console.log(client);
     return from(
       this.supabaseClient.from("cliente").update(client).eq("id", id).select()
     )
@@ -27,5 +27,17 @@ export class ProfileService {
 
   getCar() {
     return from(this.supabaseClient.from("vehiculo").select("*").returns());
+  }
+
+  updateRent(stateRent:string, id:number) {
+    return from(
+      this.supabaseClient.from("alquiler").update({estado_alquiler: stateRent}).eq("id", id).select()
+    )
+  }
+
+  insertDevolutionRent(body:any) {
+    return from(
+      this.supabaseClient.from('devolucion').insert(body).select()
+    )
   }
 }

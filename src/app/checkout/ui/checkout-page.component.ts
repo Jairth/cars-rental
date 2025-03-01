@@ -24,6 +24,7 @@ export default class CheckoutPageComponent {
 		garantia: ['', Validators.required],
 		vehiculo_id: [0, Validators.required],
 		cliente_uuid: ['', Validators.required],
+		estado_alquiler: ['Activo', Validators.required],
 	})
 
 
@@ -59,7 +60,7 @@ export default class CheckoutPageComponent {
 			this.itemCar.set(state.car);
 		}
 
-		// console.log(this.itemCar());
+		console.log(this.itemCar());
 	}
 
 	onSubmit() {
@@ -68,6 +69,8 @@ export default class CheckoutPageComponent {
 			vehiculo_id: this.itemCar().id,
 			cliente_uuid: this.client.id,
 		})
+
+		console.log(this.formCheckout.value);
 
 		if (this.formCheckout.invalid) {
 			return;

@@ -114,4 +114,34 @@ input[type="number"]::-webkit-outer-spin-button {
   & tbody tr:last-child td{
     border-radius:  0 0 0.5rem 0.5rem;
   }
+
+  & .activo, & .atrasado, & .antes-tiempo, & .tiempo {
+    line-height: 1;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  & .activo {
+    background-color: #2ba366;
+  }
+
+  & .tiempo {
+    background-color: #4984eb;
+  }
+
+  & .atrasado {
+    background-color: #ff3232;
+  }
+
+  & .antes-tiempo {
+    background-color: #bdbd11;
+  }
+}
+
+@media (max-width: 500px) {
+  .formulario {
+    flex-direction: column;
+  }
 }

@@ -8,3 +8,12 @@ body {
   font-family: 'Onest', sans-serif;
   margin: 0;
 }
+
+select {
+  color: #fff;
+}
+
+select option {
+  background-color: black;
+  color: white;
+}
