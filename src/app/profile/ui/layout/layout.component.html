@@ -62,6 +62,7 @@
             <th>Vehículo</th>
             <th>Fecha Inicio</th>
             <th>Fecha Fin</th>
+            <th>Estado</th>
             <th></th>
           </thead>
           <tbody>
@@ -71,8 +72,9 @@
                 <td>{{ rent.marca }} - {{ rent.modelo }}</td>
                 <td>{{ rent.fecha_inicio }}</td>
                 <td>{{ rent.fecha_fin }}</td>
+                <td> <span [className]="typeStateRent(rent.estado_alquiler)">{{ rent.estado_alquiler }}</span></td>
                 <td>
-
+                  <button class="btn" (click)="updateStateRent(rent.id, rent.fecha_fin)">Devolver auto</button>
                 </td>
               </tr>
             }
@@ -82,3 +84,5 @@
     </div>
   </div>
 </div>
+
+<app-toast #toast></app-toast>

@@ -44,7 +44,7 @@ export default class PaymentPageComponent {
 	}
 
 	onSubmit() {
-		// console.log(this.formPayment.value);
+		console.log(this.formPayment.value);
 
 		this.formPayment.patchValue({
 			alquiler_id: this.rent[0].id,
@@ -65,21 +65,25 @@ export default class PaymentPageComponent {
 	getRentCar(rent: any) {
 		this.paymentService.getRentCar().subscribe({
 			next: (response: any) => {
-				// console.log(response);
+				console.log(response);
 
 				if (response) {
 					this.rent = response.data.filter(
 						(rentCars: any) => rentCars.lugar_entrega === rent.lugar_entrega,
 					);
 					console.log(this.rent);
-					this.daysRent = this.daysRentFormat(this.rent[0].fecha_inicio, this.rent[0].fecha_fin);
+					this.daysRent = this.daysRentFormat(
+						this.rent[0].fecha_inicio,
+						this.rent[0].fecha_fin,
+					);
 					this.formPayment.patchValue({
 						alquiler_id: this.rent[0].id,
 						monto_adicional: this.rent[0].garantia,
 					});
-					this.getCar();
 
 					console.log(this.formPayment.value.monto_adicional);
+					console.log(this.daysRent);
+					this.getCar();
 				}
 			},
 			error: (error) => {},
@@ -89,19 +93,21 @@ export default class PaymentPageComponent {
 	getCar() {
 		this.paymentService.getCar().subscribe({
 			next: (response: any) => {
-				// console.log(response);
+				console.log(response);
 				if (response) {
 					this.car = response.data.filter(
 						(car: any) => car.id === this.rent[0].vehiculo_id,
 					);
 					console.log(this.car);
+
+					const days = Math.max(1, Number(this.daysRent));
+					const price = this.car[0].price;
+
 					this.formPayment.patchValue({
-						monto_vehiculo: this.car[0].price * Number(this.daysRent),
-						monto_igv: Math.round(this.car[0].price * Number(this.daysRent) * 0.18 * 100) / 100,
+						monto_vehiculo: price * days,
+						monto_igv: Math.round(price * days * 0.18 * 100) / 100,
 						monto_total:
-							(this.car[0].price * Number(this.daysRent)) +
-							(this.car[0].price * Number(this.daysRent)) * 0.18 +
-							this.rent[0].garantia,
+							price * days + price * days * 0.18 + this.rent[0].garantia,
 					});
 
 					console.log(this.formPayment.value);
@@ -111,7 +117,7 @@ export default class PaymentPageComponent {
 		});
 	}
 
-	daysRentFormat(fecha_inicio:string, fecha_fin:string) {
+	daysRentFormat(fecha_inicio: string, fecha_fin: string) {
 		const start = new Date(fecha_inicio);
 		const end = new Date(fecha_fin);
 

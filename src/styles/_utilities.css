@@ -195,3 +195,12 @@ textarea {
 :is(input, textarea):focus:invalid {
   border-color: #ff4d4d;
 }
+
+@keyframes fadeInCustom {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
